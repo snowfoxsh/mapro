@@ -182,4 +182,3 @@ mod tests {
         assert_eq!(vec[2], 3);
     }
 }
-
