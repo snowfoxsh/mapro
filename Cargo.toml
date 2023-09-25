@@ -1,0 +1,10 @@
+[package]
+name = "mapro"
+authors = ["Patrick Unick <dev_storm@winux.com>"]
+version = "0.1.0"
+edition = "2021"
+description = "A tiny macro library for creating std::collections"
+keywords = ["macro", "map", "HashMap", "set", "HashSet"]
+
+
+
