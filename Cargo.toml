@@ -6,3 +6,4 @@ edition = "2021"
 description = "A tiny macro library for creating std::collections"
 keywords = ["macro", "map", "HashMap", "set", "HashSet"]
 repository = "https://github.com/snowfoxsh/mapro"
+license = "MIT"
