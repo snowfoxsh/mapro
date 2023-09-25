@@ -125,6 +125,32 @@ macro_rules! vec_d {
         ])
     }};
 }
+
+/// Creates a [BinaryHeap] containing the specified elements.
+///
+/// [BinaryHeap]:std::collections::BinaryHeap
+///
+/// # Examples
+///
+/// ```
+/// use mapro::heap;
+///
+/// let mut heap = heap!{1, 2, 3};
+///
+/// assert_eq!(heap.pop(), Some(3));
+/// assert_eq!(heap.pop(), Some(2));
+/// assert_eq!(heap.pop(), Some(1));
+/// ```
+#[macro_export]
+macro_rules! heap {
+    ( ) => {{ std::collections::BinaryHeap::new() }};
+        ( $($elm:expr),* $(,)?) => {{
+        std::collections::BinaryHeap::from([
+            $($elm,)*
+        ])
+    }};
+}
+
 mod tests {
     use super::*;
     use std::collections::*;
@@ -180,5 +206,16 @@ mod tests {
         assert_eq!(vec[0], 1);
         assert_eq!(vec[1], 2);
         assert_eq!(vec[2], 3);
+    }
+
+    #[test]
+    fn test_heap_macro() {
+        let heap: BinaryHeap<()> = heap!();
+        assert!(heap.is_empty());
+
+        let mut heap = heap!(1, 2, 3);
+        assert_eq!(heap.pop(), Some(3));
+        assert_eq!(heap.pop(), Some(2));
+        assert_eq!(heap.pop(), Some(1));
     }
 }
