@@ -14,7 +14,7 @@ To use `mapro`, add it to your `Cargo.toml` dependencies:
 
 ```toml
 [dependencies]
-mapro = "0.1.0"
+mapro = "0.1.1"
 ```
 
 or run:
